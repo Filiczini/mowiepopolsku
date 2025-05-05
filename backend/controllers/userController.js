@@ -4,7 +4,7 @@ exports.getAllUsers = async (req, res) => {
   const users = await User.find().select("-passwordHash");
   res.json(users);
 };
-
+// Створення користувача
 exports.createUser = async (req, res) => {
   const { name, email, passwordHash, role } = req.body;
   const user = new User({ name, email, passwordHash, role });
